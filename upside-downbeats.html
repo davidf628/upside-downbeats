@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Band Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        nav {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 70px 20px 20px; /* Adjust padding to account for fixed nav */
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            top: 50px; /* Starts just below the nav */
+            left: -250px;
+            width: 250px;
+            height: calc(100% - 50px); /* Fills the remaining vertical space */
+            background: #1e3a8a;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, left 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.open {
+            transform: translateX(0);
+            left: 0;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <span>Your Band Name</span>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="bios.html">Bios</a>
+        <a href="images.html">Images</a>
+        <a href="videos.html">Videos</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to [Your Band Name]</h1>
+        <p>This is the official website of [Your Band Name]. Stay tuned for updates, music, and more!</p>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            } else {
+                sidebar.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>

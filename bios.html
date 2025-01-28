@@ -34,48 +34,110 @@
         nav a:hover {
             text-decoration: underline;
         }
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            top: 50px; /* Starts just below the nav */
+            left: -250px;
+            width: 250px;
+            height: calc(100% - 50px); /* Fills the remaining vertical space */
+            background: #1e3a8a;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, left 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.open {
+            transform: translateX(0);
+            left: 0;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
         .container {
             padding: 70px 20px 20px; /* Adjust padding to account for fixed nav */
         }
         .bio {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .bio img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            float: left;
         }
         .bio h2 {
-            margin: 0 0 10px;
             color: #1e3a8a;
+            margin: 0 0 10px;
+        }
+        .bio p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <nav>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <span>Your Band Name</span>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
         <a href="index.html">Home</a>
         <a href="bios.html">Bios</a>
         <a href="images.html">Images</a>
         <a href="videos.html">Videos</a>
-    </nav>
+    </div>
 
     <div class="container">
         <h1>Meet the Band</h1>
 
         <div class="bio">
-            <h2>Member 1</h2>
-            <p>Bio information for Member 1. Include details like role, background, and fun facts!</p>
+            <img src="lead-guitarist.jpg" alt="Lead Guitarist">
+            <h2>Lead Guitarist</h2>
+            <p>The lead guitarist brings electrifying solos and unforgettable riffs to the band's sound.</p>
         </div>
 
         <div class="bio">
-            <h2>Member 2</h2>
-            <p>Bio information for Member 2. Include details like role, background, and fun facts!</p>
+            <img src="lead-singer.jpg" alt="Lead Singer">
+            <h2>Lead Singer</h2>
+            <p>The voice of the band, our lead singer captivates audiences with powerful vocals and charisma.</p>
         </div>
 
         <div class="bio">
-            <h2>Member 3</h2>
-            <p>Bio information for Member 3. Include details like role, background, and fun facts!</p>
+            <img src="bassist.jpg" alt="Bassist">
+            <h2>Bassist</h2>
+            <p>The bassist lays down the groove, providing the heartbeat of every song.</p>
         </div>
 
         <div class="bio">
-            <h2>Member 4</h2>
-            <p>Bio information for Member 4. Include details like role, background, and fun facts!</p>
+            <img src="drummer.jpg" alt="Drummer">
+            <h2>Drummer</h2>
+            <p>With precision and energy, the drummer keeps the band in perfect rhythm.</p>
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            } else {
+                sidebar.classList.add('open');
+            }
+        }
+    </script>
 </body>
 </html>

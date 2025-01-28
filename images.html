@@ -34,6 +34,39 @@
         nav a:hover {
             text-decoration: underline;
         }
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            top: 50px; /* Starts just below the nav */
+            left: -250px;
+            width: 250px;
+            height: calc(100% - 50px); /* Fills the remaining vertical space */
+            background: #1e3a8a;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, left 0.3s ease;
+            transform: translateX(-100%);
+        }
+        .sidebar.open {
+            transform: translateX(0);
+            left: 0;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
         .container {
             padding: 70px 20px 20px; /* Adjust padding to account for fixed nav */
         }
@@ -68,11 +101,19 @@
 </head>
 <body>
     <nav>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <span>Your Band Name</span>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
         <a href="index.html">Home</a>
-        <a href="bios.html">Bios</a>
+        <a href="bios-lead-guitarist.html">Lead Guitarist</a>
+        <a href="bios-lead-singer.html">Lead Singer</a>
+        <a href="bios-bassist.html">Bassist</a>
+        <a href="bios-drummer.html">Drummer</a>
         <a href="images.html">Images</a>
         <a href="videos.html">Videos</a>
-    </nav>
+    </div>
 
     <div class="container">
         <h1>Gallery</h1>
@@ -99,5 +140,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            } else {
+                sidebar.classList.add('open');
+            }
+        }
+    </script>
 </body>
 </html>

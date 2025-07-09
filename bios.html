@@ -4,89 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bios - Upside Down Beats</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-        nav {
-            background: #1e3a8a;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .menu-button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .sidebar {
-            position: fixed;
-            top: 50px; /* Starts just below the nav */
-            left: -250px;
-            width: 250px;
-            height: calc(100% - 50px); /* Fills the remaining vertical space */
-            background: #1e3a8a;
-            color: #fff;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, left 0.3s ease;
-            transform: translateX(-100%);
-        }
-        .sidebar.open {
-            transform: translateX(0);
-            left: 0;
-        }
-        .sidebar a {
-            color: #fff;
-            display: block;
-            margin: 10px 0;
-            text-decoration: none;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 70px 20px 20px; /* Adjust padding to account for fixed nav */
-        }
-        .bio {
-            margin-bottom: 40px;
-        }
-        .bio img {
-            max-width: 150px;
-            border-radius: 50%;
-            margin-right: 20px;
-            float: left;
-        }
-        .bio h2 {
-            color: #1e3a8a;
-            margin: 0 0 10px;
-        }
-        .bio p {
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -102,77 +20,79 @@
     </div>
 
     <div class="container">
-        <h1>Meet the Band</h1>
-
-        <div class="bio">
-            <img src="./img/img_1233.jpg" alt="Lead Guitarist">
-            <h2>Kevin McNamara</h2>
-            <p>
-                Kevin McNamara is the lead guitarist of the band and has been melting the 
-                faces of Charlestonians for over two decades with his jaw-dropping solos!
-            </p>
+        <div class="intro">
+            <h1>Meet the Band</h1>
         </div>
+
+        <section class="bios">
+            <div class="bio">
+                <div>
+                    <img src="./img/img_1233.jpg" alt="Lead Guitarist">
+                </div>
+                <div>
+                    <h2>Kevin McNamara</h2>
+                    <p>
+                        Kevin McNamara is the lead guitarist of the band and has been melting the
+                        faces of Charlestonians for over two decades with his jaw-dropping solos!
+                    </p>
+                </div>
+            </div>
+
+            <div class="bio">
+                <div>
+                    <img src="./img/IMG_2770.jpg" alt="Lead Singer">
+                </div>
+                <div>
+                    <h2>David Flenner</h2>
+                    <p>
+                        From Kurt Cobain, to Zach De La Rocha, to Olivia Rodrigo, Dave dazzles
+                        the audience with exciting vocals across many genres. Having over 25 years
+                        of experience with the acoustic guitar, Dave also backs up his singing with
+                        the rhythm guitar in the band.
+                    </p><br/>
+                    <p>
+                        Dave started playing in high school and was a former member of The Leftorium -
+                        an acousting duo with Kevin McNamara. The Leftorium played shows around Charleston
+                        for about 7 years at great venues such as: Sesame Burgers and Brew (multiple locations),
+                        Wine Down, and Coastal Coffee Roasters.
+                    </p><br/>
+                    <p>
+                        These days he is venturing out from the acoustic and has explored with electric - you'll
+                        find him changing instruments throughout the shows.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bio">
+                <div>
+                    <img src="./img/img_justin.jpg" alt="Bassist">
+                </div>
+                <div>
+                    <h2>Justin Sellers</h2>
+                    <p>
+                        Our newest member of the band - Justin has found a home in deep in the
+                        rhythm section with his heart pounding bass. Just wait until you hear
+                        him rocking out tunes by The Red Hot Chili Peppers, Cake, and Pink Floyd!
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bio">
+                <div>
+                    <img src="./img/img_jason.jpg" alt="Drummer">
+                </div>
+                <div>
+                    <h2>Jason Gillespie</h2>
+                    <p>
+                        The heart of the band is Jason, who keeps everyone else in perfect time.
+                        Jason also has a lot of experience playing with local bands such as the
+                        Rescue Blues!
+                    </p>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <div class="container">
-        <div class="bio">
-            <img src="./img/IMG_2770.jpg" alt="Lead Singer">
-            <h2>David Flenner</h2>
-            <p>
-                From Kurt Cobain, to Zach De La Rocha, to Olivia Rodrigo, Dave dazzles
-                the audience with exciting vocals across many genres. Having over 25 years
-                of experience with the acoustic guitar, Dave also backs up his singing with
-                the rhythm guitar in the band.
-            </p><br/>
-            <p>
-                Dave started playing in high school and was a former member of The Leftorium -
-                an acousting duo with Kevin McNamara. The Leftorium played shows around Charleston
-                for about 7 years at great venues such as: Sesame Burgers and Brew (multiple locations),
-                Wine Down, and Coastal Coffee Roasters.
-            </p><br/>
-            <p>
-                These days he is venturing out from the acoustic and has explored with electric - you'll
-                find him changing instruments throughout the shows.
-            </p><br/>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="bio">
-            <img src="./img/img_justin.jpg" alt="Bassist">
-            <h2>Justin Sellers</h2>
-            <p>
-                Our newest member of the band - Justin has found a home in deep in the
-                rhythm section with his heart pounding bass. Just wait until you hear
-                him rocking out tunes by The Red Hot Chili Peppers, Cake, and Pink Floyd!
-            </p><br/>
-        </div>
-    </div>
-
-    <br/><br/><br/>
-
-    <div class="container">
-        <div class="bio">
-            <img src="./img/img_jason.jpg" alt="Drummer">
-            <h2>Jason Gillespie</h2>
-            <p>
-                The heart of the band is Jason, who keeps everyone else in perfect time.
-                Jason also has a lot of experience playing with local bands such as the
-                Rescue Blues!
-            </p>
-        </div>
-    </div>
-
-
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-            } else {
-                sidebar.classList.add('open');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

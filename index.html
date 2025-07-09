@@ -4,139 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Upside Down Beats</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-        nav {
-            background: #272c38;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .menu-button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .sidebar {
-            position: fixed;
-            top: 50px; /* Starts just below the nav */
-            left: -250px;
-            width: 250px;
-            height: calc(100% - 50px); /* Fills the remaining vertical space */
-            background: #1e3a8a;
-            color: #fff;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, left 0.3s ease;
-            transform: translateX(-100%);
-        }
-        .sidebar.open {
-            transform: translateX(0);
-            left: 0;
-        }
-        .sidebar a {
-            color: #fff;
-            display: block;
-            margin: 10px 0;
-            text-decoration: none;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 70px 20px 20px; /* Adjust padding to account for fixed nav */
-            text-align: center;
-        }
-        h1 {
-            color: #1e3a8a;
-        }
-        p {
-            font-size: 18px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <button class="menu-button" onclick="toggleSidebar()">☰</button>
     </nav>
-
     <div class="sidebar" id="sidebar">
         <a href="index.html">Home</a>
         <a href="bios.html">Bios</a>
         <a href="images.html">Images</a>
         <a href="videos.html">Videos</a>
     </div>
-
-    <div class="container">
-        <h1>Welcome to the Official Website of the Upside Downbeats!</h1>
-        <p>Discover our music, meet the band, and explore our journey. Check out photos, videos, and learn more about us!</p>
+    <div class="hero">
+        <div class="container">
+            <img src="https://davidf628.github.io/upside-downbeats/img/band_logo.jpg"
+                 alt="Band Logo"
+                 width="300">
+        </div>
     </div>
-
-    <div style="text-align: center;">
-        <img src="https://davidf628.github.io/upside-downbeats/img/band_logo.jpg" 
-             alt="Band Logo"
-             width="300"
-             height="300">
-      </div>
-
     <div class="container">
-    <p>
-        We are a four-piece local rock band with an extensive cover selection including artists
-        like: Cake, The Killers, Rage Against the Machine, The Cranberries, Wilco, Pink Floyd,
-        Tears for Fears, and many, many more!
-    </p>  
+        <div class="intro" style="padding-top: 20px">
+            <h1>Welcome to the Official Website of the Upside Downbeats!</h1>
+            <p>Discover our music, meet the band, and explore our journey. Check out photos, videos, and learn more about us!</p>
+        </div>
+        <p>
+            We are a four-piece local rock band with an extensive cover selection including artists
+            like: Cake, The Killers, Rage Against the Machine, The Cranberries, Wilco, Pink Floyd,
+            Tears for Fears, and many, many more!
+        </p>
 
-    <p>
-        We also have a short list of great originals written by our lead guitarist Kevin McNamara!
-    </p>
+        <p>
+            We also have a short list of great originals written by our lead guitarist Kevin McNamara!
+        </p>
 
-    <p>
-        Together, we have a long history of rocking out the Charleston area featuring great spots
-        such as: The Celt, Carolina Butcher and Beer Garden, The Commonhouse, and more!
-    </p>
+        <p>
+            Together, we have a long history of rocking out the Charleston area featuring great spots
+            such as: The Celt, Carolina Butcher and Beer Garden, The Commonhouse, and more!
+        </p>
 
-    <p>
-        Let us know how we can help rock out your next show!
-    </p>
+        <p>
+            Let us know how we can help rock out your next show!
+        </p>
 
-    <p>
-        Contact our booking manager: <a href="email"> Sarah Ann Bolden</a> for more information!
-    </p>
+        <p>
+            Contact our booking manager: <a href="email"> Sarah Ann Bolden</a> for more information!
+        </p>
     </div>
-    
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-            } else {
-                sidebar.classList.add('open');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
